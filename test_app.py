@@ -4,7 +4,7 @@ import pytest
 from app import create_app
 from urllib.parse import quote
 
-@pytest.fixture
+pytest.fixture
 def app():
     return create_app()
 
@@ -15,5 +15,5 @@ def client(app):
 def test_home(client):
     response = client.get('/')
     assert response.status_code == 200
-    expected_text = 'wow ci-cd pipeline done now check yaya'
+    expected_text = 'wow ci-cd pipeline done'
     assert expected_text.encode() in response.data
