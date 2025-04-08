@@ -1,14 +1,12 @@
-# app.py
+from flask import Flask
 
-from flask import Flask 
-from urllib.parse import quote 
 
 def create_app():
     app = Flask(__name__)
-
     @app.route('/')
     def home():
-        return 'wow ci-cd pipeline done'
+        print("hi hello")
+        return 'Hi i created ci-cd pipeline'
 
     return app
 if __name__ == '__main__':
